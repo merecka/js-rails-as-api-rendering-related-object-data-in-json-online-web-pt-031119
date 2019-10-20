@@ -1,6 +1,6 @@
 class BirdsController < ApplicationController
   def index
-    @birds = Bird.all
-    render json: @birds
+	  sightings = Sighting.all
+	  render json: sightings, include: [:bird, :location]
   end
 end
